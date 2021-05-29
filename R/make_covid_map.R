@@ -65,5 +65,5 @@ make_covid_map <- function(file) {
   xml2::xml_children() |>
   purrr::walk(~ xml2::xml_set_attr(.x, "fill", colour_town[xml2::xml_attr(.x, "id")]))
 
-  xml2::write_xml(main, choose.files())
+  xml2::write_xml(main, file)
 }
