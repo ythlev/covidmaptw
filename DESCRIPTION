@@ -1,15 +1,13 @@
 Package: covidmaptw
-Title: What the Package Does (One Line, Title Case)
+Title: Map of COVID-19 infection in Taiwan
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Chia-huan",
+           family = "Chang",
            role = c("aut", "cre"),
-           email = "first.last@example.com",
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+           email = "ythlev@gmail.com")
+Description: TBA.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
