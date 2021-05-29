@@ -15,30 +15,30 @@ make_covid_map <- function(file) {
     cases = as.integer(cases)
   )
 
-  towns <- data_cases |>
+  town <- data_cases |>
   dplyr::count(site_id, wt = cases) |>
-  dplyr::right_join(towns) |>
+  dplyr::right_join(town) |>
   dplyr::mutate(
     n = tidyr::replace_na(n, 0),
     rate = 100000 * n / people_total
   )
 
-  rate_mean <- sum(towns$n) / length(towns$n)
+  rate_mean <- sum(town$n) / length(town$n)
   breaks <- c(
-    0,
+    0 / 9 * rate_mean,
     1 / 9 * rate_mean,
     4 / 9 * rate_mean,
     9 / 9 * rate_mean,
     16 / 9 * rate_mean
   )
 
-  towns <- towns |>
+  town <- town |>
   dplyr::mutate(
     level = findInterval(rate, breaks),
     fill = RColorBrewer::brewer.pal(5, "RdPu")[level]
   )
-  colour_town <- towns$fill
-  names(colour_town) <- towns$site_id
+  colour_town <- town$fill
+  names(colour_town) <- town$site_id
 
   main <- xml2::read_xml(system.file("extdata", "template.svg", package = "covidmaptw", mustWork = TRUE))
 
