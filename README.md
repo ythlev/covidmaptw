@@ -4,7 +4,7 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-This package is used to create a map of COVID-19 infection rates in Taiwan.
+This package is used to create an svg map of COVID-19 infection rates in Taiwan.
 
 ## Installation
 
@@ -18,6 +18,6 @@ remotes::install_github("ythlev/covidmaptw")
 
 ``` r
 library(covidmaptw)
-## make_covid_map(choose.files())
+make_covid_map(29MAY.svg)
 ```
 
