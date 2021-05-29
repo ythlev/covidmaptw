@@ -18,6 +18,6 @@ remotes::install_github("ythlev/covidmaptw")
 
 ``` r
 library(covidmaptw)
-make_covid_map(29MAY.svg)
+make_covid_map("29MAY.svg")
 ```
 
