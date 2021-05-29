@@ -1,14 +1,24 @@
 Package: covidmaptw
-Title: Map of COVID-19 infection in Taiwan
-Version: 0.0.0.9000
+Title: Taiwan COVID19 Infection Map
+Version: 1.0.0
 Authors@R: 
     person(given = "Chia-huan",
            family = "Chang",
            role = c("aut", "cre"),
            email = "ythlev@gmail.com")
-Description: TBA.
+Description: This package generates a map of COVID-19 infection rates in Taiwan.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
+Imports: 
+    dplyr,
+    purrr,
+    RColorBrewer,
+    readr,
+    stringr,
+    tidyr,
+    xml2
+Depends: 
+    R (>= 4.1.0)
