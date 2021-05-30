@@ -5,7 +5,7 @@
 #' @export
 make_covid_map <- function(file) {
   data_cases <- readr::read_csv(
-    "https://data.cdc.gov.tw/download?resourceid=3c1e263d-16ec-4d70-b56c-21c9e2171fc7&dataurl=https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.csv",
+    "https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.csv",
     col_names = c(NA, "date", "county", "town", NA, NA, NA, "cases")
   ) |>
   dplyr::slice(-1) |>
