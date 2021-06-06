@@ -23,13 +23,13 @@ make_covid_map <- function(file) {
     rate = 100000 * n / people_total
   )
 
-  rate_mean <- sum(town$n[town$rate > 0]) / length(town$n[town$rate > 0])
+  rate_mean <- sum(town$n) / length(town$n)
   breaks <- c(
     0,
-    min(town$rate[town$rate > 0]),
-    1 / 4 * rate_mean,
-    4 / 4 * rate_mean,
-    9 / 4 * rate_mean
+    1 / 9 * rate_mean,
+    4 / 9 * rate_mean,
+    9 / 9 * rate_mean,
+    16 / 9 * rate_mean
   )
 
   town <- town |>
@@ -49,7 +49,7 @@ make_covid_map <- function(file) {
   xml2::xml_set_text(as.character(max(data_cases$date)))
 
   breaks <- format(breaks, digits = 2)
-  breaks[1] <- paste("=", breaks[1])
+  breaks[1] <- paste("<", breaks[2])
   breaks[2:5] <- paste("\u2265", breaks[2:5])
 
   for (i in 2:6) {
